@@ -1,0 +1,14 @@
+<launch>
+  <param name="/use_sim_time" value="true"/>
+  <node name="tfManager" pkg="realtime_mapping" type="tfManager" output="screen">
+    <rosparam param="frames">[
+      "ego_vehicle_rear_axis ego_vehicle_front_axis 2.921 0.0 0.0 0.0 0.0 0.0", 
+      "ego_vehicle_rear_axis sensor_lux_front 3.560 0.230 0.320 0.0 -0.023 0.0130", 
+      "ego_vehicle_rear_axis sensor_lux_right 2.450 -0.850 0.570 0.0 0.0 -1.55570", 
+      "ego_vehicle_rear_axis sensor_lux_back -0.980 0.0 0.510 0.0 0.0 -3.11041", 
+      "ego_vehicle_rear_axis sensor_lux_left 2.450 0.850 0.570 0.0 0.0 1.59089"
+    ]</rosparam>
+    <param name="test" type="double" value="100" />
+    <!--remap from="rt3000_in" to="/sensorik/rt3k/rt3000" /-->
+  </node>
+</launch>

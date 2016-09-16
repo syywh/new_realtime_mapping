@@ -1,0 +1,27 @@
+Pre-requirements:
+1. Install ros indigo.
+2. Install PCL 1.7 or higher.
+
+Compile:
+1. cd to catkin_ws:  
+	cd ~/catkin_ws
+2. use catkin_make command:  
+	catkin_make
+
+Run:
+1. start roscore, which is the basic service for ros, dealing with connections and communications among ros nodes and/or ros nodelets.
+	roscore
+
+2. start rviz, which is the visualization tool in ros.
+	rviz
+
+3. play bag files (e.g. ***.bag, which contains the sensor messages): http://wiki.ros.org/rosbag/Tutorials/Recording%20and%20playing%20back%20data
+	rosbag play ***.bag
+
+4. launch tfManager which deals with the transformations of the mounted sensors:
+	roslaunch /***/realtime_mapping/launch/tfManager.launch
+
+5. launch pcManager which deals with the pointcloud msg with the tf(transformation) info by putting each individual pointcloud registered together.
+	roslaunch /***/realtime_mapping/launch/pcManager.launch
+
+6. add observations in rviz: e.g. add a pointcloud rviz object, and select the available topics, then the data will be shown.
